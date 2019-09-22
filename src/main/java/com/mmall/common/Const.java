@@ -48,8 +48,6 @@ public class Const {
             return code;
         }
     }
-
-
     public enum OrderStatusEnum{
         CANCELED(0,"已取消"),
         NO_PAY(10,"未支付"),
@@ -58,22 +56,18 @@ public class Const {
         ORDER_SUCCESS(50,"订单完成"),
         ORDER_CLOSE(60,"订单关闭");
 
-
         OrderStatusEnum(int code,String value){
             this.code = code;
             this.value = value;
         }
         private String value;
         private int code;
-
         public String getValue() {
             return value;
         }
-
         public int getCode() {
             return code;
         }
-
         public static OrderStatusEnum codeOf(int code){
             for(OrderStatusEnum orderStatusEnum : values()){
                 if(orderStatusEnum.getCode() == code){
@@ -83,6 +77,8 @@ public class Const {
             throw new RuntimeException("么有找到对应的枚举");
         }
     }
+
+    
     public interface  AlipayCallback{
         String TRADE_STATUS_WAIT_BUYER_PAY = "WAIT_BUYER_PAY";
         String TRADE_STATUS_TRADE_SUCCESS = "TRADE_SUCCESS";
